@@ -7,6 +7,8 @@ const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.js')[env];
 const db = {};
+const response = await fetch(`${process.env.REACT_APP_SERVER_URL}places`)
+
 
 let sequelize;
 if (config.use_env_variable) {
